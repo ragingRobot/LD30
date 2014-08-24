@@ -3,8 +3,8 @@ using System.Collections;
 
 public class cellAnimate : MonoBehaviour {
 	protected Animator animator;
-	ParticleSystem particles;
-	int life = 4;
+	private ParticleSystem particles;
+	public int life = 4;
 	GameObject body;
 	// Use this for initialization
 	void Start () {

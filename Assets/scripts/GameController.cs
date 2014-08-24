@@ -6,7 +6,9 @@ public class GameController : Singleton<GameController> {
 	public int activeBloodCells = 5;
 	
 	public void Awake(){
-		//  Set Game Options
+		var go = GameObject.Find("Game Music"); //Finds the game object called Game Music, if it goes by a different name, change this.
+		DontDestroyOnLoad(go);
+		go.audio.Play(); //Plays the audio.
 
 	}
 }
