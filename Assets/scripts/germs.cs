@@ -51,6 +51,7 @@ public class germs : MonoBehaviour {
 			particles.enableEmission = true;
 			sprite.enabled = false;
 			collider.enabled = false;
+			GameController.Instance.activeGerms -=1;
 		}
 		
 	}

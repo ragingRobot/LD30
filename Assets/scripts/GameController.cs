@@ -2,9 +2,16 @@
 
 public class GameController : Singleton<GameController> {
 	protected GameController(){}
-	public int maxBloodCells = 5;
-	public int activeBloodCells = 5;
-	
+	public int maxBloodCells = 0;
+	public int activeBloodCells = 0;
+	public int maxWhiteCells = 0;
+	public int activeWhiteCells = 0;
+	public int maxGerms = 0;
+	public int activeGerms = 0;
+	public int currentLevel = 0;
+	public FailureMenu failMenu;
+	public SuccessMenu successMenu;
+	public string[] levels = new string[10]{"level1", "level2","level3","level4","level5","level6","level7","level8","level9","level10"};
 	public void Awake(){
 		var go = GameObject.Find("Game Music"); //Finds the game object called Game Music, if it goes by a different name, change this.
 		DontDestroyOnLoad(go);

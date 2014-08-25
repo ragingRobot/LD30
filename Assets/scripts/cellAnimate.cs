@@ -36,6 +36,27 @@ public class cellAnimate : MonoBehaviour {
 
 
 		}
+
+
+		if(collision.gameObject.name == "crust" && body.renderer.enabled){
+			
+			
+			if(life > 1){
+				life -= 1;
+				animator.SetInteger("life",life);
+			}else{
+				life =0;
+				particles.Play();
+				particles.enableEmission = true;
+				body.renderer.enabled = false;
+				GameController.Instance.activeBloodCells -=1;
+				body.collider.enabled = false;
+				this.collider.enabled = false;
+				AutoDestruct(1);
+			}
+			
+			
+		}
 	}
 	IEnumerator AutoDestruct(float delay) {
 		yield return new WaitForSeconds(delay);
