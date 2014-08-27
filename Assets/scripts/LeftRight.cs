@@ -20,8 +20,14 @@ public class LeftRight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		pos = transform.position;
-
+		if(leftRight){
 			pos.x += speed * dir;
+		}
+
+		if(upDown){
+			pos.y += speed * dir;
+		}
+
 
 
 

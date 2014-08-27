@@ -153,9 +153,9 @@ public class DragShotMover : MonoBehaviour {
 			if(lockToMouse ){
 				Vector3 pos = transform.position;
 				
-				pos.x += (mousePos3D.x - pos.x) *.02f;
-				pos.y += (mousePos3D.y - pos.y) *.02f;
-				pos.z += (mousePos3D.z - pos.z) *.02f;
+				pos.x += (mousePos3D.x - pos.x) *.05f;
+				pos.y += (mousePos3D.y - pos.y) *.05f;
+				pos.z += (mousePos3D.z - pos.z) *.05f;
 				transform.position = pos;
 			}
 
