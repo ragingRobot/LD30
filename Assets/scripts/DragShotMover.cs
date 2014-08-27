@@ -34,7 +34,7 @@ public class DragShotMover : MonoBehaviour {
 	
 	public bool  overrideVelocity = true; // cancel the existing velocity before applying the new force
 	public bool  pauseOnDrag = true; // causes the simulation to pause when the object is clicked and unpause when released
-	
+	public bool  lockToMouse = true;
 	public Color noForceColor = Color.yellow; // color of the visualization helpers at force 0
 	public Color maxForceColor = Color.red; // color of the visualization helpers at maximum force
 	
@@ -147,10 +147,26 @@ public class DragShotMover : MonoBehaviour {
 			
 			// draw the line
 			Debug.DrawRay(transform.position, forceVector / magMultiplier, currentColor);
+
+
+
+			if(lockToMouse ){
+				Vector3 pos = transform.position;
+				
+				pos.x += (mousePos3D.x - pos.x) *.02f;
+				pos.y += (mousePos3D.y - pos.y) *.02f;
+				pos.z += (mousePos3D.z - pos.z) *.02f;
+				transform.position = pos;
+			}
+
+
 		}
 		
 		//update the position of the dragzone
 		dragZone.transform.position = transform.position;
+
+
+
 	}
 	
 	void  OnMouseUp (){
