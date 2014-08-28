@@ -11,7 +11,8 @@ public class GameController : Singleton<GameController> {
 	public int currentLevel = 0;
 	public FailureMenu failMenu;
 	public SuccessMenu successMenu;
-	public string[] levels = new string[17]{"level1", "level2","level3","level4","level5","level6","level7","level8","level9","level10","level11","level12","level13","level14","level15","level16","level17"};
+	public string[] levels = new string[25]{"level1", "level2","level3","level4","level5","level6","level7","level8","level9","level10","level11","level12","level13","level14","level15","level16","level17",
+		"level18","level19","level20","level21","level22","level23","level24","level25"};
 	public void Awake(){
 		var go = GameObject.Find("Game Music"); //Finds the game object called Game Music, if it goes by a different name, change this.
 		DontDestroyOnLoad(go);

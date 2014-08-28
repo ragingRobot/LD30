@@ -6,6 +6,10 @@ public class LeftRight : MonoBehaviour {
 	public float speed = .02f;
 	public bool upDown = false;
 	public bool leftRight = true;
+	public bool roationObject;
+	public GameObject lockToObject;
+
+
 	Vector3 pos;
 	// Use this for initialization
 	void Start () {
@@ -28,10 +32,17 @@ public class LeftRight : MonoBehaviour {
 			pos.y += speed * dir;
 		}
 
+		if(roationObject){
+
+			transform.RotateAround(Vector3.zero, Vector3.forward, speed * Time.deltaTime);
+		}
 
 
-
-		transform.position = pos;
+		if(lockToObject){
+			transform.position  = lockToObject.transform.position;
+		}else{
+			transform.position = pos;
+		}
 
 	}
 }

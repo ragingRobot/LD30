@@ -58,7 +58,7 @@ public class germs : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(target){
+		if(target  && sprite.enabled){
 			if(target.life > 0){
 				trans = transform.position;
 				trans.x += (target.transform.position.x - trans.x) * speedoffset;
