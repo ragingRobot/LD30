@@ -15,7 +15,7 @@ public class WhiteBloodCell : MonoBehaviour {
 		particles.enableEmission = false;
 	}
 	void OnCollisionEnter(Collision collision) {
-		if(collision.gameObject.name == "crust" && body.renderer.enabled){
+		if((collision.gameObject.name == "crust" || collision.gameObject.name == "capsule" ) && body.renderer.enabled){
 			
 			
 			if(life > 1){

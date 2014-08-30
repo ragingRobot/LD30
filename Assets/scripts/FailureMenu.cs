@@ -5,7 +5,7 @@ public class FailureMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log("yes");
+
 		this.gameObject.SetActiveRecursively(false);
 		GameController.Instance.failMenu = this;
 	}

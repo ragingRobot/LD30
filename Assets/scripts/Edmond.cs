@@ -13,6 +13,7 @@ public class Edmond : MonoBehaviour {
 		cellAnimate[] cells = FindObjectsOfType(typeof(cellAnimate)) as cellAnimate[];
 		WhiteBloodCell[] whiteCells = FindObjectsOfType(typeof(WhiteBloodCell)) as WhiteBloodCell[];
 		germs[] germList = FindObjectsOfType(typeof(germs)) as germs[];
+		Capsule[] capsuleList = FindObjectsOfType(typeof(Capsule)) as Capsule[];
 
 		GameController.Instance.activeBloodCells = cells.Length;
 		GameController.Instance.maxBloodCells = cells.Length;
@@ -20,8 +21,8 @@ public class Edmond : MonoBehaviour {
 		GameController.Instance.activeWhiteCells = whiteCells.Length;
 		GameController.Instance.maxWhiteCells = whiteCells.Length;
 
-		GameController.Instance.activeGerms = germList.Length;
-		GameController.Instance.maxGerms = germList.Length;
+		GameController.Instance.activeGerms = germList.Length + capsuleList.Length;
+		GameController.Instance.maxGerms = germList.Length + capsuleList.Length;
 
 
 		animator = GetComponent<Animator>();
@@ -61,7 +62,7 @@ public class Edmond : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(animator)
+		if(animator && !dead)
 		{
 		
 			if(GameController.Instance.maxBloodCells > 0){
@@ -97,8 +98,22 @@ public class Edmond : MonoBehaviour {
 				}
 			}
 
+
+
+
 			if(GameController.Instance.activeGerms == 0){
 				nextLevel();
+			}else if(GameController.Instance.activeGerms > 90){
+				animator.SetInteger("sicknessLevel",4);
+				death();
+			}else if(GameController.Instance.activeGerms > 60){
+				if(animator.GetInteger("sicknessLevel")< 3){
+					animator.SetInteger("sicknessLevel",3);
+				}
+			}else if(GameController.Instance.activeGerms > 30){
+				if(animator.GetInteger("sicknessLevel")< 2){
+					animator.SetInteger("sicknessLevel",2);
+				}
 			}
 
 
