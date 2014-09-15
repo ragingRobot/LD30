@@ -29,6 +29,7 @@ public class WhiteBloodCell : MonoBehaviour {
 				body.collider.enabled = false;
 				this.collider.enabled = false;
 				AutoDestruct(1);
+				audio.Play();
 			}
 			
 			

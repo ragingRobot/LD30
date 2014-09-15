@@ -52,6 +52,7 @@ public class germs : MonoBehaviour {
 			sprite.enabled = false;
 			collider.enabled = false;
 			GameController.Instance.activeGerms -=1;
+			audio.Play ();
 		}
 		
 	}

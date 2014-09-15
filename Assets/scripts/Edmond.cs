@@ -37,7 +37,7 @@ public class Edmond : MonoBehaviour {
 			gameEnded = true;
 			dead = true;
 			animator.SetInteger("sicknessLevel",4);
-
+			audio.Play();
 
 		
 			//StartCoroutine(reloadLevel(3));

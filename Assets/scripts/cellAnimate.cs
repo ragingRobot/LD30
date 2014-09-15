@@ -32,6 +32,7 @@ public class cellAnimate : MonoBehaviour {
 					body.collider.enabled = false;
 					this.collider.enabled = false;
 					AutoDestruct(1);
+					audio.Play();
 				}
 
 
@@ -53,6 +54,7 @@ public class cellAnimate : MonoBehaviour {
 				body.collider.enabled = false;
 				this.collider.enabled = false;
 				AutoDestruct(1);
+				audio.Play();
 			}
 			
 			
